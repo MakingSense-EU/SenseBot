@@ -24,12 +24,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 
 gem 'haml-rails'
-gem 'gemoji'
 gem 'httparty'
 
 gem 'option'
-
-#gem 'rgeo-geojson'
+gem 'wit'
 
 
 # Use ActiveModel has_secure_password

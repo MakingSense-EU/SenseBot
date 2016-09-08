@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
 module SenseBot
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -22,5 +24,9 @@ module SenseBot
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Added Load Paths - Luco
+    config.autoload_paths += %W(#{config.root}/app/modules)
+    config.autoload_paths += %W(#{config.root}/app/services)
   end
 end
